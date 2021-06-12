@@ -8,19 +8,17 @@ on:
     branches: [ workflowtest ]
 
 jobs:
-  build:
-
+  scan:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
-        java-version: '8'
+        java-version: '11'
         distribution: 'adopt'
     - name: Build with Maven
-      run: mvn test sonar:sonar -Dsonar.organization=f0rb-github -Dsonar.host.url=https://sonarcloud.io
+      run: mvn clean test sonar:sonar -Dsonar.organization=f0rb-github -Dsonar.host.url=https://sonarcloud.io
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
