@@ -10,7 +10,7 @@
         <artifactId>oss-parent</artifactId>
         <version>9</version>
     </parent>
-         
+
     <groupId>win.doyto</groupId>
     <artifactId>doyto-query-dialect</artifactId>
     <name>doyto-query-dialect</name>
@@ -116,43 +116,44 @@
                     </execution>
                 </executions>
             </plugin>
-                 
-          <!-- Javadoc plugin -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>3.3.0</version>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
 
-          <!-- GPG plugin -->
-          <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-gpg-plugin</artifactId>
-              <version>3.0.1</version>
-              <executions>
-                  <execution>
-                      <id>sign-artifacts</id>
-                      <phase>verify</phase>
-                      <goals>
-                          <goal>sign</goal>
-                      </goals>
-                      <configuration>
-                          <!-- Prevent `gpg` from using pinentry programs -->
-                          <gpgArguments>
-                              <arg>--pinentry-mode</arg>
-                              <arg>loopback</arg>
-                          </gpgArguments>
-                      </configuration>
-                  </execution>
-            </executions>
+            <!-- Javadoc plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- GPG plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Prevent `gpg` from using pinentry programs -->
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <licenses>
