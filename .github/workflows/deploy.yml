@@ -25,7 +25,7 @@ jobs:
         gpg-passphrase: GPG_PASSPHRASE # env variable for GPG private key passphrase
    
     - name: Publish package
-      run: mvn -P sonatype-oss-release -e -X deploy
+      run: mvn -e -X deploy
       env:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
