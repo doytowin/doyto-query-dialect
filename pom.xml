@@ -13,8 +13,9 @@
 
     <artifactId>doyto-query-dialect</artifactId>
     <name>doyto-query-dialect</name>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1-RELEASE</version>
     <url>https://query.doyto.win/</url>
+    <description>Dialect implementations for different databases</description>
 
     <dependencies>
         <dependency>
