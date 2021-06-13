@@ -152,7 +152,7 @@
                           </gpgArguments>
                       </configuration>
                   </execution>
-              </executio
+            </executions>
         </plugins>
     </build>
     <licenses>
