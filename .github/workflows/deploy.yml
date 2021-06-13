@@ -22,11 +22,9 @@ jobs:
         server-username: OSSRH_USERNAME # env variable for username in deploy
         server-password: OSSRH_PASSWORD # env variable for token in deploy
         gpg-private-key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }} # Value of the GPG private key to import
-        gpg-passphrase: GPG_PASSPHRASE # env variable for GPG private key passphrase
-   
     - name: Publish package
       run: mvn -e -X deploy -P sonatype-oss-release -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}
       env:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        GPG_TTY: $(tty)
