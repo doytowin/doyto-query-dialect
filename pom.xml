@@ -11,6 +11,11 @@
         <version>1</version>
     </parent>
 
+    <properties>
+        <sonar.organization>f0rb-github</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
+
     <artifactId>doyto-query-dialect</artifactId>
     <name>doyto-query-dialect</name>
     <version>0.0.1-RELEASE</version>
