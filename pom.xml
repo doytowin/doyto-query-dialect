@@ -48,6 +48,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/doytowin/doyto-query-dialect</url>
+        </repository>
+    </distributionManagement>
+
     <scm>
         <tag>main</tag>
         <url>https://github.com/doytowin/doyto-query-dialect</url>
