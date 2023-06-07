@@ -32,6 +32,10 @@
     <url>https://query.doyto.win/</url>
     <description>Dialect implementations for different databases</description>
 
+    <properties>
+        <sonatypeOssDistMgmtSnapshotsUrl>https://maven.pkg.github.com/doytowin/doyto-query-dialect</sonatypeOssDistMgmtSnapshotsUrl>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>win.doyto</groupId>
@@ -60,6 +64,19 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>github</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+        </snapshotRepository>
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/doytowin/doyto-query-dialect</url>
+        </repository>
+    </distributionManagement>
 
     <scm>
         <tag>main</tag>
