@@ -1,7 +1,5 @@
 package win.doyto.query.dialect;
 
-import win.doyto.query.config.MySQLDialect;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +10,7 @@ import java.util.Set;
  */
 public class MySQL8Dialect extends MySQLDialect {
 
-    private Set<String> keywords;
+    private final Set<String> keywords;
 
     public MySQL8Dialect() {
         keywords = new HashSet<>();
