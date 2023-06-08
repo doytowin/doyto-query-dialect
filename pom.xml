@@ -33,7 +33,8 @@
     <description>Dialect implementations for different databases</description>
 
     <properties>
-        <sonatypeOssDistMgmtSnapshotsUrl>https://maven.pkg.github.com/doytowin/doyto-query-dialect</sonatypeOssDistMgmtSnapshotsUrl>
+        <distribution.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots/</distribution.snapshots.url>
+        <distribution.releases.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</distribution.releases.url>
     </properties>
 
     <dependencies>
@@ -67,14 +68,14 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>github</id>
+            <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus Snapshots</name>
-            <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+            <url>${distribution.snapshots.url}</url>
         </snapshotRepository>
         <repository>
-            <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/doytowin/doyto-query-dialect</url>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>${distribution.releases.url}/</url>
         </repository>
     </distributionManagement>
 
