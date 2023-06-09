@@ -16,6 +16,9 @@ jobs:
         run: |
           git config user.email "f0rb@163.com"
           git config user.name "Forb Yuan"
+          git config user.signingkey ${{ secrets.GPG_KEY_ID }}
+          git config gpg.program gpg 
+          git config commit.gpgsign true
 
       - name: Cache Maven packages
         uses: actions/cache@v3
@@ -52,3 +55,11 @@ jobs:
           -DsourceDirectory=target/delombok \
           -DskipTests=true \
           release:prepare release:perform
+
+      - name: Rollback on failure
+        if: ${{ failure() }}
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mvn -B release:rollback
