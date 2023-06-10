@@ -26,7 +26,7 @@
     </parent>
 
     <artifactId>doyto-query-dialect</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.3-SNAPSHOT</version>
     <url>https://query.doyto.win/</url>
     <description>Dialect implementations for different databases</description>
 
@@ -78,7 +78,7 @@
     </distributionManagement>
 
     <scm>
-        <tag>doyto-query-dialect-0.0.3</tag>
+        <tag>main</tag>
         <url>https://github.com/doytowin/doyto-query-dialect</url>
         <connection>scm:git:https://github.com/doytowin/doyto-query-dialect.git</connection>
         <developerConnection>scm:git:https://github.com/doytowin/doyto-query-dialect.git</developerConnection>
