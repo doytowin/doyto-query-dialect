@@ -31,8 +31,10 @@
     <description>Dialect implementations for different databases</description>
 
     <properties>
+        <distribution.snapshots.id>sonatype-nexus-snapshots</distribution.snapshots.id>
         <distribution.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots/</distribution.snapshots.url>
-        <distribution.releases.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</distribution.releases.url>
+        <distribution.release.id>sonatype-nexus-staging</distribution.release.id>
+        <distribution.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</distribution.release.url>
     </properties>
 
     <dependencies>
@@ -66,14 +68,14 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
+            <id>${distribution.snapshots.id}</id>
             <name>Sonatype Nexus Snapshots</name>
             <url>${distribution.snapshots.url}</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-staging</id>
+            <id>${distribution.release.id}</id>
             <name>Nexus Release Repository</name>
-            <url>${distribution.releases.url}/</url>
+            <url>${distribution.release.url}/</url>
         </repository>
     </distributionManagement>
 
