@@ -22,7 +22,8 @@
     <parent>
         <groupId>win.doyto</groupId>
         <artifactId>doyto-oss-parent</artifactId>
-        <version>3</version>
+        <version>4-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <artifactId>doyto-query-dialect</artifactId>
@@ -30,12 +31,20 @@
     <url>https://query.doyto.win/</url>
     <description>Dialect implementations for different databases</description>
 
-    <properties>
-        <distribution.snapshots.id>sonatype-nexus-snapshots</distribution.snapshots.id>
-        <distribution.snapshots.url>https://oss.sonatype.org/content/repositories/snapshots/</distribution.snapshots.url>
-        <distribution.release.id>sonatype-nexus-staging</distribution.release.id>
-        <distribution.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</distribution.release.url>
-    </properties>
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Nexus Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -65,19 +74,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>${distribution.snapshots.id}</id>
-            <name>Sonatype Nexus Snapshots</name>
-            <url>${distribution.snapshots.url}</url>
-        </snapshotRepository>
-        <repository>
-            <id>${distribution.release.id}</id>
-            <name>Nexus Release Repository</name>
-            <url>${distribution.release.url}/</url>
-        </repository>
-    </distributionManagement>
 
     <scm>
         <tag>main</tag>
